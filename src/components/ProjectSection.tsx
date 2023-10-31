@@ -149,6 +149,9 @@ const ProjectsSection = () => {
               imgUrl={project.image}
               website={project.website ? project.website : ""}
               techStack={project.techStack}
+              git={project.git}
+              gitBackend={project.gitBackend}
+              gitFrontend={project.gitFrontend}
             />
           </motion.li>
         ))}

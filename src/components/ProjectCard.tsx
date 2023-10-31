@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import {CodeBracketIcon, EyeIcon} from "@heroicons/react/24/outline";
 import Link from "next/link";
 
@@ -9,9 +8,21 @@ interface ProjectCardProps {
   description: string;
   website: string;
   techStack: string;
+  git?: string;
+  gitBackend?: string;
+  gitFrontend?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({imgUrl, title, description, website, techStack}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  imgUrl,
+  title,
+  description,
+  website,
+  techStack,
+  git,
+  gitBackend,
+  gitFrontend,
+}) => {
   return (
     <div>
       <div
@@ -24,22 +35,46 @@ const ProjectCard: React.FC<ProjectCardProps> = ({imgUrl, title, description, we
             {techStack}
           </p>
           <div className="flex">
-            <Link
-              target="_blank"
-              href={website}
-              className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white mr-4 group/link flex flex-col justify-center items-center"
-            >
-              <EyeIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-              <p className="text-[#ADB7BE] mt-[80px]">Preview</p>
-            </Link>
-            <Link
-              target="_blank"
-              href="/"
-              className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link flex flex-col justify-center items-center"
-            >
-              <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-              <p className="text-[#ADB7BE] mt-[80px]">Code</p>
-            </Link>
+            {website && (
+              <Link
+                target="_blank"
+                href={website}
+                className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white mr-4 group/link flex flex-col justify-center items-center"
+              >
+                <EyeIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                <p className="text-[#ADB7BE] mt-[80px]">Preview</p>
+              </Link>
+            )}
+            {git && (
+              <Link
+                target="_blank"
+                href={git}
+                className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link flex flex-col justify-center items-center"
+              >
+                <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                <p className="text-[#ADB7BE] mt-[80px]">Code</p>
+              </Link>
+            )}
+            {gitBackend && (
+              <Link
+                target="_blank"
+                href={gitBackend}
+                className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link flex flex-col justify-center items-center"
+              >
+                <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                <p className="text-[#ADB7BE] mt-[80px]">Backend</p>
+              </Link>
+            )}
+            {gitFrontend && (
+              <Link
+                target="_blank"
+                href={gitFrontend}
+                className="ml-5 h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link flex flex-col justify-center items-center"
+              >
+                <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                <p className="text-[#ADB7BE] mt-[80px]">Frontend</p>
+              </Link>
+            )}
           </div>
         </div>
       </div>
