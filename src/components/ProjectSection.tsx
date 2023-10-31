@@ -12,6 +12,7 @@ const projectsData = [
     tag: ["All", "Frontend"],
     git: "https://github.com/gurparshad/nexa-bank",
     website: "https://nexabank.netlify.app/",
+    techStack: "HTML, Tailwind CSS, TypeScript, React",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const projectsData = [
     tag: ["All", "Frontend"],
     git: "https://github.com/gurparshad/moviez",
     website: "https://moviez-thetrailerhome.netlify.app/",
+    techStack: "HTML,CSS, Material UI, TypeScript, React",
   },
   {
     id: 3,
@@ -30,15 +32,8 @@ const projectsData = [
     tag: ["All", "Full Stack"],
     git: "https://github.com/gurparshad/CashFlow",
     website: "https://cashflow99.netlify.app/",
-  },
-  {
-    id: 4,
-    title: "Airbnb",
-    description: "UI",
-    image: "/images/projects/airbnb.png",
-    tag: ["All", "Frontend"],
-    git: "https://github.com/gurparshad/airBnb-clone",
-    website: "",
+    techStack:
+      "Build using MERN stack. HTML, CSS, GRID system, Media query, TypeScript, Material UI, MUI data-grid, styled components, Emotion, ReCharts, React, React-router, Redux-toolkit, MongoDB, expressJS, nodeJS",
   },
   {
     id: 5,
@@ -48,6 +43,8 @@ const projectsData = [
     tag: ["All", "Full Stack"],
     gitFrontend: "https://github.com/gurparshad/WCRealEstate-Frontend",
     gitBackend: "https://github.com/gurparshad/WCRealEstate-Backend",
+    techStack:
+      "Frontend - HTML, CSS, React-bootstrap, Axios, JavaScript, React, react-multi-carousel. Backend - Node js, express js, MySQL, sequelize, multer, bcrypt",
   },
   {
     id: 6,
@@ -57,23 +54,8 @@ const projectsData = [
     tag: ["All", "Full Stack"],
     gitFrontend: "https://github.com/gurparshad/gym-e-shop-frontend",
     gitBackend: "https://github.com/gurparshad/gym-e-shop-backend",
-  },
-  {
-    id: 7,
-    title: "Spotify UI",
-    description: "User interface",
-    image: "/images/projects/spotify.png",
-    tag: ["All", "Frontend"],
-    git: "https://github.com/gurparshad/Spotify-web-player-ui",
-    website: "https://spotify-web-player.netlify.app/",
-  },
-  {
-    id: 8,
-    title: "Recipe Guru",
-    description: "Recipe App",
-    image: "/images/projects/recipe.jpeg",
-    tag: ["All", "Frontend"],
-    website: "https://recepiguru.netlify.app",
+    techStack:
+      "Frontend - HTML, CSS, Vue, Nuxt js, VueX, TypeScript, bootstrap-vue, axios. Backend - JavaScript, Express js, MongoDB, Mongoose, JWT, Multer, Alogolia Search, Bcrypt",
   },
   {
     id: 9,
@@ -83,6 +65,28 @@ const projectsData = [
     tag: ["All", "Full Stack"],
     gitFrontend: "https://github.com/gurparshad/quit-smoking-frontend",
     gitBackend: "https://github.com/gurparshad/quit-smoking-backend",
+    techStack:
+      "Frontend - HTML, CSS, JavaScript, React, Moment, Axios, React-Bootstrap, Socket.io. Backend - Node js, express js, MySQL, sequelize, multer, bcrypt, socket.io",
+  },
+  {
+    id: 7,
+    title: "Spotify UI",
+    description: "This is a spotify desktop player. One can login into the app by using their spotify account.",
+    image: "/images/projects/spotify.png",
+    tag: ["All", "Frontend"],
+    git: "https://github.com/gurparshad/Spotify-web-player-ui",
+    website: "https://spotify-web-player.netlify.app/",
+    techStack: "Spotify API, HTML, CSS, React, javascript material UI, flex box, context API",
+  },
+  {
+    id: 4,
+    title: "Airbnb",
+    description: "UI",
+    image: "/images/projects/airbnb.png",
+    tag: ["All", "Frontend"],
+    git: "https://github.com/gurparshad/airBnb-clone",
+    website: "",
+    techStack: "HTML, Material UI, CSS, javascript, React",
   },
   {
     id: 10,
@@ -91,7 +95,17 @@ const projectsData = [
     image: "/images/projects/corona.png",
     tag: ["All", "Frontend"],
     website: "https://corona-tracker-covid-19.netlify.app",
-    git: "https://github.com/gurparshad/covid-19-tracker",
+    git: "https://github.com/gurparshad/coronaTrackerApp",
+    techStack: "HTML, Material UI CSS, TypeScript, React, chart js, react-chartjs-2, Axios, leaflet, react-Leaflet.",
+  },
+  {
+    id: 8,
+    title: "Recipe Guru",
+    description: "Recipe App",
+    image: "/images/projects/recipe.jpeg",
+    tag: ["All", "Frontend"],
+    website: "https://recepiguru.netlify.app",
+    techStack: "recipe API, HTML, CSS, TypeScript, React",
   },
 ];
 const ProjectsSection = () => {
@@ -118,6 +132,8 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imgUrl={project.image}
+            website={project.website ? project.website : ""}
+            techStack={project.techStack}
           />
         ))}
       </div>
