@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useTransition} from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
@@ -42,12 +42,9 @@ const TAB_DATA = [
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id: string) => {
-    startTransition(() => {
-      setTab(id);
-    });
+    setTab(id);
   };
 
   return (
