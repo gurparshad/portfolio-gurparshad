@@ -16,7 +16,7 @@ const HeroSection = () => {
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white max-w-2xl mb-4 lg:text-6xl text-4xl font-extrabold">
-            <span className="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            <span className="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
               Hello, I&lsquo;m{" "}
             </span>{" "}
             <br></br>
@@ -28,18 +28,22 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] mb-6 textl-lg lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Experienced full stack developer equipped with a diverse and promising skill set.
           </p>
           <div className="flex items-center">
             <Link
               href="/#contact"
-              className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full mr-4"
+              className="bg-gradient-to-br from-green-500 via-sky-500 to-blue-500 text-white px-6 py-3 rounded-full mr-4"
             >
               Hire Me
             </Link>
-            <button className="m-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-1 py-1  text-white rounded-full">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Download CV</span>
-            </button>
+            <a
+              href="/Resume-Gurparshad.pdf" // Replace with the actual path to your CV file
+              download="Resume-Gurparshad.pdf" // Specify the desired file name when downloaded
+              className="m-4 bg-gradient-to-br from-green-500 via-sky-500 to-blue-500 px-1 py-1 text-white rounded-full text-center block"
+            >
+              <span className="bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 block">Download CV</span>
+            </a>
             <div className="socials flex flex-row gap-5 ml-[15px]">
               <Link href="https://github.com/gurparshad" target="_blank">
                 <Image alt="git" src="/images/github-icon.svg" width={40} height={40} />
