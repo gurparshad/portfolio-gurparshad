@@ -1,7 +1,8 @@
 "use client";
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import {motion, useInView} from "framer-motion";
 
 const projectsData = [
   {
@@ -110,6 +111,13 @@ const projectsData = [
 ];
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
+
+  const cardVariants = {
+    initial: {y: 50, opacity: 0},
+    animate: {y: 0, opacity: 1},
+  };
 
   const filteredProjects = projectsData.filter((project) => project.tag.includes(tag));
 
@@ -118,7 +126,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="md:pt-[100px] pt-20">
+    <section id="projects" className="md:pt-[100px] pt-20" ref={ref}>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">My Projects</h2>
       <div className="flex flex-row justify-center items-center gap-2 text-white my-6">
         <ProjectTag name="All" onClick={handleTagChange} isSelected={tag === "All"} />
@@ -127,14 +135,22 @@ const ProjectsSection = () => {
       </div>
       <div className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            website={project.website ? project.website : ""}
-            techStack={project.techStack}
-          />
+          <motion.li
+            key={index}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{duration: 0.4, delay: index * 0.4}}
+          >
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              website={project.website ? project.website : ""}
+              techStack={project.techStack}
+            />
+          </motion.li>
         ))}
       </div>
     </section>
