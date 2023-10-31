@@ -126,7 +126,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="md:pt-[100px] pt-20" ref={ref}>
+    <section id="projects" className="md:pt-[120px] pt-20" ref={ref}>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">My Projects</h2>
       <div className="flex flex-row justify-center items-center gap-2 text-white my-6">
         <ProjectTag name="All" onClick={handleTagChange} isSelected={tag === "All"} />

@@ -64,13 +64,13 @@ const HeroSection = () => {
         >
           <div className="bg-[#181818] lg:w-[400px] lg:h-[400px] w-[250px] h-[250px] rounded-full flex justify-center items-center">
             <Image
-              src="/images/hero_image.png"
+              src="/images/hero.png"
               alt="hero image"
               className="object-contain"
               // className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" // other way to do it, comment the above className
               // in the parent div set the position relative an remove this styles 'flex justify-center items-center'
-              width={300}
-              height={300}
+              width={500}
+              height={500}
             />
           </div>
         </motion.div>
